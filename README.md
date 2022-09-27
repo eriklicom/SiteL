@@ -14,7 +14,7 @@
 </div>
 <a href='https://dev.SSS.com'>
 
-  <img src='s/desktop/developers/images/favicon.ico'style='width :16px'>
+  <img src='s/desktop/developers/images/favicon.ico'style='width :16px;'>
 
   DEVELOPERS
 
@@ -22,7 +22,7 @@
 
 </div>
 
-<a href='https://dev.SSS.com' style='width :16px'>
+<a href='https://dev.SSS.com' style='width :16px;'>
 
   <img src='s/desktop/developers/images/favicon.ico'>
 
@@ -34,7 +34,7 @@
 
 <a href='https://dev.SSS.com'>
 
-  <img src='s/desktop/developers/images/favicon.ico'style='width :16px'>
+  <img src='s/desktop/developers/images/favicon.ico'style='width :16px;'>
 
   DEVELOPERS
 
