@@ -8,23 +8,13 @@
 
 <div>
 <a href='https://dev.SSS.com'>
-  <img src='s/desktop/D1/img/favicon.ico'>
+  <img src='s/desktop/D1/img/favicon-16x16.png'>
   Home
   </a>
 </div>
 <a href='https://dev.SSS.com'>
 
-  <img src='s/desktop/developers/images/favicon.ico'style='width :16px;'>
-
-  DEVELOPERS
-
-  </a>
-
-</div>
-
-<a href='https://dev.SSS.com' style='width :16px;'>
-
-  <img src='s/desktop/developers/images/favicon.ico'>
+  <img src='s/desktop/developers/images/favicon-16x16.png'>
 
   DEVELOPERS
 
@@ -34,11 +24,12 @@
 
 <a href='https://dev.SSS.com'>
 
-  <img src='s/desktop/developers/images/favicon.ico'style='width :16px;'>
+  <img src='s/desktop/developers/images/favicon-16x16.png'>
 
   DEVELOPERS
 
   </a>
 
 </div>
+
 
