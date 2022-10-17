@@ -1,0 +1,15 @@
+STERK GAME
+https://sterkgame.com
+https://dev.sterkgame.com
+
+_github-pages-challenge-eriklicom
+89d1c1327a3f28b5f28ef192effd4e
+
+1. Create a TXT record in your DNS configuration for the following hostname: _github-pages-challenge-eriklicom.sterkgame.com
+
+2. Use this code for the value of the TXT record: 89d1c1327a3f28b5f28ef192effd4e
+
+3. Wait until your DNS configuration changes. This could take up to 24 hours to propagate.
+
+  
+
