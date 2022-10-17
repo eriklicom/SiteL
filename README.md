@@ -1,7 +1,7 @@
 # SiteL 
 <br>
-<h1>ASSETS DO SITE{fan} </h1>
-<h6>EU SOU O DONO DA {FAN}</h6>
+<h1>ASSETS DO SITE 'https://sterkgame.com/' </h1>
+<h6>EU SOU O DONO DA STERK GAME</h6>
 <a href="http://sterkgame.com/">
   <h2>Sterk Game</h2>
 </a>
@@ -12,7 +12,7 @@
   Home
   </a>
 </div>
-<a href='https://dev.SSS.com'>
+<a href='[https://dev.SSS.com](https://dev.sterkgame.com)'>
 
   <img src='s/desktop/developers/images/favicon-16x16.png'>
 
@@ -22,7 +22,7 @@
 
 </div>
 
-<a href='https://dev.SSS.com'>
+<a href='https://dev.sterkgame.com'>
 
   <img src='s/desktop/developers/images/favicon-16x16.png'>
 
