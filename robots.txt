@@ -8,15 +8,15 @@ crawl-delay: 1
 
 User-agent: *
 
-Disallow: /*/pulse
+Disallow: /*.js
 
-Disallow: /*/tree/
+Disallow: /assets
 
-Disallow: /*.git$
+Disallow: /*.json
 
 Disallow: /search/advanced
 
-Disallow: /search
+Disallow: /*.html
 
 Disallow: */search
 
