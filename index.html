@@ -17,7 +17,51 @@
   })(window.tx=[])
   </script>
     <style>
-      
+      video{
+        width:100%;
+      }
+      .img-thumbnail img{
+        width:100%;
+
+      }
+      .img-thumbnail {
+        width:100%;
+        position:absolute;
+        max-height:1000px;
+        overflow:hidden;
+        z-index: -1;
+      }
+      .video-content-viwer{
+        position:relative;
+        background:#000000;
+      }
+      .video-content-info{
+        position:absolute;
+        height:100%;
+        top: 0;left: 0;width:100%;
+      }
+      .hero{
+        position: absolute;
+        height:100%;
+        background:rgba(24,24,27,.6);
+        width:100%;
+        top:0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+      *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+      }
+      .vt_se{
+        color:#fff;z-index: 5;
+        position:absolute;
+        padding:  50px 20px;
+        bottom: 0;
+        font-weight: 600;
+      }
     </style>
   </head>
   <body>
@@ -27,11 +71,20 @@
         <main class="content-page" role=meta>
           <div class="video-content-viwer">
             <div class="content_video-E-info">
-              <video controls=""></video>
+              <video id="html5-video"src="https://file-examples.com/storage/fe7589721d63762859d6962/2017/04/file_example_MP4_1920_18MG.mp4" ></video>
               <div class="video-content-info">
-                <div class="img-tamb">
-                  <img src="https://i.ytimg.com/vi/cmrKfVbMtd0/hq720.jpg" alt="">
+                <div class="img-thumbnail">
+                  <img src="https://i.ytimg.com/vi/XIpUlD_c9Ak/hq720.jpg" alt="">
                 </div>
+                <div class="hero"></div>
+                <p class="vt_se">LIPÃO é o AMIGO FALSO! - Pico Park com Gelli, MarceloDRV e Luan Clash War</p>
+                <div class="format-ift">
+                  <span class="ift-3838">Curta</span>
+                  <span class="ift-3838">•</span>
+                  <span class="ift-3838">3,2 mil visualizações</span>
+                  <span class="ift-3838">•</span>
+                  <span class="ift-3838">há 1 hora</span>
+               </div>
               </div>
             </div>
           </div>
@@ -41,6 +94,7 @@
     
     
     <script>
+   
     try {
         var defaultSpadeEndpoint = "https://spade.twitch.tv/track";
         window.__twilightBuildID = "b542762e-38a1-407e-b228-1fa473db683a";
@@ -152,5 +206,12 @@
         console.error("Error in bootstrap script:", e);
     }
 </script>
+    <script >
+      (function(a){
+        var vd=document.querySelector("#html5-video");
+        vd.play()
+        vd.muted=true;
+      })(window)
+    </script>
   </body>
 </html>
