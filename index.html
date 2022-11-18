@@ -472,14 +472,14 @@
           http.setRequestHeader('Content-type', 'application/json');
           http.setRequestHeader('Accept', 'application/json, text/plain, */*');
           http.onreadystatechange = function() {//Call a function when the state changes.
-            if(http.readyState == 4 || http.status == 200) {
+            if(http.readyState == 4 && http.status == 200) {
             console.log(JSON.parse(http.responseText));
-            console.log(http.responseText);
             var b=(JSON.parse(http.responseText));
+            console.log(b.url);
             var vd=document.querySelector("#html5-video");
             vd.play()
             vd.muted=true;
-            vd.src=b.url[5];
+            vd.src=b.url[1].url;
             vd.currentTime=0;
             }
           }
