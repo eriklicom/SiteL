@@ -71,9 +71,9 @@
         padding:  50px 20px;
         bottom: 40px;
         font-weight: 600;
-        animation: content-out 0.5s ease forwards;
         animation-delay: 0s;
       }
+      .vt_se.an{animation: content-in 0.5s ease forwards;}
       .ift-3838{
         color:#888;
       }
@@ -151,6 +151,19 @@
         }
         100%{
           transform: translate(0,-50%);
+          opacity: 0;
+        }
+      }
+      @keyframes content-in{
+        100%{
+          transform: translate(0,0);
+        }
+        50%{
+          transform: translate(0,-50%);
+          opacity: 0;
+        }
+        0%{
+          transform: translate(0,50%);
           opacity: 0;
         }
       }
@@ -471,16 +484,16 @@
                   <img src="https://i.ytimg.com/vi/${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}/hq720.jpg" alt="">
                 </div>
                 <div class="hero"></div>
-                <p class="vt_se">${JSON.parse(http.responseText).items[i].snippet.resourceId.title}</p>
-                <div class="format-ift">
-                  <span class="ift-3838">Curta</span>
+                <p class="vt_se an">${JSON.parse(http.responseText).items[i].snippet.resourceId.title}</p>
+                <div class="format-ift an" >
+                  <span class="ift-3838">${JSON.parse(http.responseText).items[i].snippet.resourceId.videoOwnerChannelTitle}</span>
                   <span class="ift-3838">•</span>
                   <span class="ift-3838">3,2 mil visualizações</span>
                   <span class="ift-3838">•</span>
                   <span class="ift-3838">há 1 hora</span>
                </div>
-               <a class="video-content-btn-link" href="/">Assistir</a>
-             `
+               <a class="video-content-btn-link an" href="/">Assistir</a>
+             `;
               ft({url:"https://youtube.com/watch?v="+JSON.parse(http.responseText).items[i].snippet.resourceId.videoId})
           },time);
             }
