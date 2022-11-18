@@ -496,7 +496,8 @@
               console.log(JSON.parse(http.responseText))
              var ud=JSON.parse(http.responseText).items[0].snippet.publishedAt.split("-");
              
-             var sdn={ y: new Date().getFullYear() - ud[0] }
+             var sdn={
+               y: new Date().getFullYear() - ud[0] }
              console.log(sdn)
             setInterval(async function(){
               var yd=document.querySelector(".video-content-info");
