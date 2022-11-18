@@ -468,10 +468,10 @@
               i++; 
               var yd=document.querySelector(".video-content-info");
               yd.innerHTML=`<div class="img-thumbnail">
-                  <img src="https://i.ytimg.com/vvi${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}/hq720.jpg" alt="">
+                  <img src="https://i.ytimg.com/vi/${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}/hq720.jpg" alt="">
                 </div>
                 <div class="hero"></div>
-                <p class="vt_se">LIPÃO é o AMIGO FALSO! - Pico Park com Gelli, MarceloDRV e Luan Clash War</p>
+                <p class="vt_se">${JSON.parse(http.responseText).items[i].snippet.resourceId.title}</p>
                 <div class="format-ift">
                   <span class="ift-3838">Curta</span>
                   <span class="ift-3838">•</span>
