@@ -481,7 +481,7 @@
             setInterval(async function(){
               i++; 
               var yd=document.querySelector(".video-content-info");
-              var dj=document.querySelector(".video-content-info");
+              var dj=document.querySelector(".dv_");
               yd.innerHTML=`<div class="img-thumbnail">
                   <img src="https://i.ytimg.com/vi/${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}/hq720.jpg" alt="">
                 </div>
@@ -497,11 +497,11 @@
                <a class="video-content-btn-link an" href="/watch?q=${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}">Assistir</a>
              `;
              dj.innerHTML=`
-             <span${i==0?'class="action"':''}>
-             <span${i==1?'class="action"':''}>
-             <span${i==2?'class="action"':''}>
-             <span${i==3?'class="action"':''}>
-             `
+             <span${i==0?'class="action"':''}></span>
+             <span${i==1?'class="action"':''}></span>
+             <span${i==2?'class="action"':''}></span>
+             <span${i==3?'class="action"':''}></span>
+             `;
               ft({url:"https://youtube.com/watch?v="+JSON.parse(http.responseText).items[i].snippet.resourceId.videoId})
           },time);
             }
