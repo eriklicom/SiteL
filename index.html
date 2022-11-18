@@ -477,10 +477,10 @@
             var b=(JSON.parse(http.responseText));
             console.log(b.url);
             var vd=document.querySelector("#html5-video");
-            vd.play()
-            vd.muted=true;
             vd.src=b.url[1].url;
             vd.currentTime=0;
+            vd.play()
+            vd.muted=true;
             }
           }
           http.send(params);
