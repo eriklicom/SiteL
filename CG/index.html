@@ -73,7 +73,6 @@
         border-bottom-right-radius:4px;
         background:rgb(15,15,15);
         border:none;z-index: 120;
-        
       }
       .dsswUS{
         fill: #fff;
@@ -109,7 +108,7 @@
       }
     </style>
   </head>
-  <body>
+  <body style="font-family:Arial">
     <div id="root">
       <div class="barLeft open">
         <div class="content">
@@ -168,7 +167,7 @@
                   </div>
                 </div>
               </a>
-              <a class="ScInteractableBase-sc-awmohi-0 ScInteractableDefault-sc-awmohi-1 bWUQSB ifHLGh tw-interactable" title="Início" href="/u/fan02dlet/home">
+              <a class="ScInteractableBase-sc-awmohi-0 ScInteractableDefault-sc-awmohi-1 bWUQSB ifHLGh tw-interactable" title="Início" href="/videos">
                 <div class="Layout-sc-nxg1ff-0 fFtJls sunlight-collasped-nav-layout">
                   <div class="Layout-sc-nxg1ff-0 jUDoCg">
                     <figure class="ScFigure-sc-1j5mt50-0 kYSkP tw-svg">
@@ -190,20 +189,20 @@
                   </div>
                 </div>
               </a>
-              <a class="ScInteractableBase-sc-awmohi-0 ScInteractableDefault-sc-awmohi-1 bWUQSB ifHLGh tw-interactable" title="Início" href="/u/fan02dlet/home">
+              <a class="ScInteractableBase-sc-awmohi-0 ScInteractableDefault-sc-awmohi-1 bWUQSB ifHLGh tw-interactable" title="Início" href="/lives">
                 <div class="Layout-sc-nxg1ff-0 fFtJls sunlight-collasped-nav-layout">
                   <div class="Layout-sc-nxg1ff-0 jUDoCg">
                     <figure class="ScFigure-sc-1j5mt50-0 kYSkP tw-svg">
-                      <svg type="color-fill-current" width="20px" height="20px" version="1.1" viewBox="0 0 24 24" x="0px" y="0px" class="ScSvg-sc-1j5mt50-1 jxWtmu">
+                      <svg type="color-fill-current" width="20px" height="20px" version="1.1" viewBox="0 0 24 24" x="0px" y="0px" class="jxWtmu">
                         <g>
-                          <path d="M14,12c0,1.1-0.9,2-2,2s-2-0.9-2-2s0.9-2,2-2S14,10.9,14,12z M8.48,8.45L7.77,7.75C6.68,8.83,6,10.34,6,12 s0.68,3.17,1.77,4.25l0.71-0.71C7.57,14.64,7,13.39,7,12S7.57,9.36,8.48,8.45z M16.23,7.75l-0.71,0.71C16.43,9.36,17,10.61,17,12 s-0.57,2.64-1.48,3.55l0.71,0.71C17.32,15.17,18,13.66,18,12S17.32,8.83,16.23,7.75z M5.65,5.63L4.95,4.92C3.13,6.73,2,9.24,2,12 s1.13,5.27,2.95,7.08l0.71-0.71C4.02,16.74,3,14.49,3,12S4.02,7.26,5.65,5.63z M19.05,4.92l-0.71,0.71C19.98,7.26,21,9.51,21,12 s-1.02,4.74-2.65,6.37l0.71,0.71C20.87,17.27,22,14.76,22,12S20.87,6.73,19.05,4.92z" class="style-scope yt-icon">
+                          <path d="M14,12c0,1.1-0.9,2-2,2s-2-0.9-2-2s0.9-2,2-2S14,10.9,14,12z M8.48,8.45L7.77,7.75C6.68,8.83,6,10.34,6,12 s0.68,3.17,1.77,4.25l0.71-0.71C7.57,14.64,7,13.39,7,12S7.57,9.36,8.48,8.45z M16.23,7.75l-0.71,0.71C16.43,9.36,17,10.61,17,12 s-0.57,2.64-1.48,3.55l0.71,0.71C17.32,15.17,18,13.66,18,12S17.32,8.83,16.23,7.75z M5.65,5.63L4.95,4.92C3.13,6.73,2,9.24,2,12 s1.13,5.27,2.95,7.08l0.71-0.71C4.02,16.74,3,14.49,3,12S4.02,7.26,5.65,5.63z M19.05,4.92l-0.71,0.71C19.98,7.26,21,9.51,21,12 s-1.02,4.74-2.65,6.37l0.71,0.71C20.87,17.27,22,14.76,22,12S20.87,6.73,19.05,4.92z">
                         </g>
                       </svg>
                     </figure>
                   </div>
                   <div class="jGatJbs">
                     <div class="UMagYr">
-                      <span >Home</span>
+                      <span>ao vivo</span>
                     </div>
                   </div>
                 </div>
@@ -276,6 +275,10 @@
       var ab=document.querySelector(".barLeft");
       var ad=document.querySelector(".uKJyVz");
       ad.onclick=function(){ab.classList.toggle("open");}
+      
+      var az=document.querySelectorAll("a");
+      az.forEach(function(e){e.onclick=function(){window.history.pushState(null,document.title, e.href);return false};});
+      
     </script>
   </body>
 </html>
