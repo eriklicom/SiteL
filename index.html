@@ -16,6 +16,16 @@
   //  a.redirect("/")
   })(window.tx=[])
   </script>
+    <script>
+      (function(g) {
+        var s = Date.now();
+        if (!g.performance) g.performance = {};
+        g.performance.now = function() {
+            return Date.now() - s
+        }
+      })(this);
+      console.log(window.performance.now())
+    </script>
     <style>
       video{
         width:100%;
@@ -169,7 +179,7 @@
         <main class="content-page" role=meta>
           <div class="video-content-viwer">
             <div class="content_video-E-info">
-              <video id="html5-video"src="https://file-examples.com/storage/fe7589721d63762859d6962/2017/04/file_example_MP4_1920_18MG.mp4" ></video>
+              <video muted="" id="html5-video"src="https://file-examples.com/storage/fe7589721d63762859d6962/2017/04/file_example_MP4_1920_18MG.mp4" ></video>
               <div class="video-content-info">
                 <div class="img-thumbnail">
                   <img src="https://i.ytimg.com/vi/XIpUlD_c9Ak/hq720.jpg" alt="">
@@ -336,6 +346,42 @@
                           i.send(e.body);
                   });
         }
+        function fetchlike(e) {
+            return "function" == typeof fetch
+                ? fetch("https://gql.twitch.tv/gql", e)
+                : new Promise(function (t, o) {
+                      var i = new XMLHttpRequest();
+                      i.open("POST", "https://gql.twitch.tv/gql"),
+                          Object.keys(e.headers).forEach(function (t) {
+                              try {
+                                  i.setRequestHeader(t, e.headers[t]);
+                              } catch (e) {
+                                  console.error(e);
+                              }
+                          }),
+                          (i.withCredentials = "include" === e.credentials),
+                          (i.onerror = o),
+                          (i.onload = function () {
+                              var e = {
+                                  status: i.status,
+                                  statusText: i.statusText,
+                                  body: i.response || i.responseText,
+                                  ok: i.status >= 200 && i.status < 300,
+                                  json: function () {
+                                      return new Promise(function (t, o) {
+                                          try {
+                                              t(JSON.parse(e.body));
+                                          } catch (e) {
+                                              o(e);
+                                          }
+                                      });
+                                  },
+                              };
+                              t(e);
+                          }),
+                          i.send(e.body);
+                  });
+        }
         var vodID,
             channelName,
             authorization = cookies["auth-token"] ? "OAuth " + cookies["auth-token"] : void 0,
@@ -406,24 +452,57 @@
 </script>
     <script >
       (function(a){
-        var time =10*1000;
+        var time =10*100;
         function setVidel(b){
           var vd=document.querySelector("#html5-video");
           vd.play()
           vd.muted=true;
           vd.src=b.vidUrl;
           vd.currentTime=0;
+          console.log(b);
         }
-        setInterval(function(){
-          fetch('http://example.com/movies.json').then((response) =>{
-            response.json()}
-            ).then((data) => console.log(data));
-          var d={
-            vidUrl:""
-          }
-          setVidel(d)
-        },time)
+        setInterval(async function(){
+
+          
+        },time);
+                function fetchlike(e) {
+            return "function" == typeof fetch
+                ? fetch("https://ssyoutube.com/api/convert", e)
+                : new Promise(function (t, o) {
+                      var i = new XMLHttpRequest();
+                      i.open("POST", "https://ssyoutube.com/api/convert"),
+                          Object.keys(e.headers).forEach(function (t) {
+                              try {
+                                  i.setRequestHeader(t, e.headers[t]);
+                              } catch (e) {
+                                  console.error(e);
+                              }
+                          }),
+                          (i.withCredentials = "include" === e.credentials),
+                          (i.onerror = o),
+                          (i.onload = function () {
+                              var e = {
+                                  status: i.status,
+                                  statusText: i.statusText,
+                                  body: i.response || i.responseText,
+                                  ok: i.status >= 200 && i.status < 300,
+                                  json: function () {
+                                      return new Promise(function (t, o) {
+                                          try {
+                                              t(JSON.parse(e.body));
+                                          } catch (e) {
+                                              o(e);
+                                          }
+                                      });
+                                  },
+                              };
+                              t(e);
+                          }),
+                          i.send(e.body);
+                  });
+        }
       })(window);
+      
     </script>
   </body>
 </html>https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=500&playlistId=PL-CszeBzoG-HPQTxJYcYT9P-Y5lyfQmOI&key=AIzaSyBZfKEL5-VEbk261Vq6eYAEUwQ1kSZDefM&positi
