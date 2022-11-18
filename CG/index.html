@@ -399,7 +399,7 @@
       text-decoration:none;
       display: block;
       overflow: hidden;
-      width:90%;
+      width:50%;
     }
     .content-auto-complete-text{
       display:flex;
@@ -418,7 +418,7 @@
     .button-remove-items{
       border-radius: 4px;
       background:none;
-      display:inline-block;
+      display:block;
       border:none;
       height: 30px;
       z-index: 20;
@@ -435,11 +435,14 @@
       width: 20px;
       user-select:none;
     }
+    .hCEsiH{
+      position: absolute;z-index: 99;
+    }
   </style>
   <ul>
     <li class="Ugsj">
       <div class="content-auto-complete">
-        <a href="/" class="a-df5">
+        <a class="a-df5">
           <div class="content-auto-complete-text">
             <div class="YyXbJ">
               <figure class="TBafs">
@@ -454,7 +457,7 @@
             <span>ARIA SECRET</span>
           </div>
         </a>
-        <div class="....">
+        <div class="hCEsiH">
           <button class="button-remove-items" aria-label="Remover histórico de busca">
             <div class="gdKhd">
               <svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScIconSVG-sc-1bgeryd-1 jgyXQm">
@@ -489,6 +492,7 @@
             </div>
             <span>${e}</span>
           </div>
+        </a>
         <div class="....">
           <button data-id=${i} class="button-remove-items" aria-label="Remover histórico de busca">
             <div class="gdKhd">
@@ -499,7 +503,6 @@
               </svg>    
             </div>
           </button>
-        </a>
         </div>
       </div>
     </li>`
@@ -524,7 +527,7 @@
       JSON.parse(sh).forEach(function(e,i){
         ui[0].innerHTML+=tpl(e,i);
       }) }
-      var btsX=document.querySelectorAll("ul")
+      var btsX=document.querySelectorAll(".button-remove-items");
       function removeItemOnce(arr, value) {
   var index = arr.indexOf(value);
   if (index > -1) {
@@ -532,6 +535,10 @@
   }
   return arr;
 }
+      
+      btsX.forEach(function(e){
+        searchRemove(e.getAttribute("data-id"))
+      })
       
     }
   </script>
