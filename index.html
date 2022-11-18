@@ -145,12 +145,20 @@
         }
       }
       .dv_ {
-        position: absolute;z-index: 9;
+        position: absolute;
+        z-index: 9;
+        bottom:10px;left: 10px;
+      }
+      .dv_ span.action{
+        background: #fff;
       }
       .dv_ span{
-        width: 4px;
-        height: 1px;
+        width: 5px;
+        height: 2px;
         background: #fff8;
+        display:block;
+        margin: 10px;
+        border-radius: 100px;
       }
     </style>
   </head>
@@ -398,10 +406,24 @@
 </script>
     <script >
       (function(a){
-        var vd=document.querySelector("#html5-video");
-        vd.play()
-        vd.muted=true;
-      })(window)
+        var time =10*1000;
+        function setVidel(b){
+          var vd=document.querySelector("#html5-video");
+          vd.play()
+          vd.muted=true;
+          vd.src=b.vidUrl;
+          vd.currentTime=0;
+        }
+        setInterval(function(){
+          fetch('http://example.com/movies.json').then((response) =>{
+            response.json()}
+            ).then((data) => console.log(data));
+          var d={
+            vidUrl:""
+          }
+          setVidel(d)
+        },time)
+      })(window);
     </script>
   </body>
-</html>
+</html>https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=500&playlistId=PL-CszeBzoG-HPQTxJYcYT9P-Y5lyfQmOI&key=AIzaSyBZfKEL5-VEbk261Vq6eYAEUwQ1kSZDefM&positi
