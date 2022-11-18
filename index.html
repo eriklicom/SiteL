@@ -61,7 +61,7 @@
         padding:  50px 20px;
         bottom: 40px;
         font-weight: 600;
-        animation: content-out 1s ease;
+        animation: content-out 0.5s ease forwards;
         animation-delay: 0s;
       }
       .ift-3838{
@@ -73,11 +73,12 @@
         bottom: 40px;
         left:0;
         font-size: 14px;
-        animation: content-out 1s ease;
-        animation-delay: 1s;
+        animation: content-out 0.5s ease forwards;
+        animation-delay: 0.2s;
       }
       .video-content-btn-link{
         font-size: 12px;
+        animation: content-out 0.5s ease forwards;
         color:#fff;z-index: 5;
         position:absolute;
         padding: 4px 16px;
@@ -134,10 +135,22 @@
         0%{
           transform: translate(0,0);
         }
+        50%{
+          transform: translate(0,-50%);
+          opacity: 0;
+        }
         100%{
           transform: translate(0,-50%);
           opacity: 0;
         }
+      }
+      .dv_ {
+        position: absolute;z-index: 9;
+      }
+      .dv_ span{
+        width: 4px;
+        height: 1px;
+        background: #fff8;
       }
     </style>
   </head>
@@ -164,9 +177,15 @@
                </div>
                <a class="video-content-btn-link" href="/">Assistir</a>
               </div>
+              <div class="dv_">
+                <span class="action">
+                <span>
+                <span>
+                <span>
+              </div>
             </div>
           </div>
-            <div>Game</div>
+          <div>Game</div>
           <div class="games-content">
             <div class="games-content-card">
               <a href="/">
