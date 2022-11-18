@@ -497,10 +497,10 @@
                <a class="video-content-btn-link an" href="/watch?q=${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}">Assistir</a>
              `;
              dj.innerHTML=`
-             <span${i==0?'class="action"':''}></span>
-             <span${i==1?'class="action"':''}></span>
-             <span${i==2?'class="action"':''}></span>
-             <span${i==3?'class="action"':''}></span>
+             <span ${i==0?'class="action"':''}/>
+             <span ${i==1?'class="action"':''}/>
+             <span ${i==2?'class="action"':''}/>
+             <span ${i==3?'class="action"':''}/>
              `;
               ft({url:"https://youtube.com/watch?v="+JSON.parse(http.responseText).items[i].snippet.resourceId.videoId})
           },time);
