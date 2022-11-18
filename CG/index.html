@@ -8,16 +8,35 @@
     <link rel="alternate" media="only screen and(max-width: 640px)" href="http://m.localhost:8160/"/>
     <link rel="canonical" href="http://localhost:8160/" />
     <style >
-      
+
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .chip-bar-contents{
+        display: flex;
+        height: 48px;
+        overflow-x:scroll;
+        width:100%;
+
+      }
+      .iKhsZf{
+        height: 100%;
+        margin: 5px;
+        max-width:200px;
+        padding: 2 4;
+        border: 2px solid #555;
+      }
     </style>
   </head>
   <body>
     <div id="root">
       <div class="JhGtE">
         <div class="menu">
-          <ytm-feed-filter-chip-bar-renderer class="chip-bar filter-chip-bar-in" id="filter-chip-bar">
+          <div class="Uhsyh" id="filter-chip-bar">
               <div class="chip-bar-contents" role="tablist">
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_EXPLORE_LAUNCHER_CHIP" aria-selected="false">
+                  <div role="tab" chip-style="STYLE_EXPLORE_LAUNCHER_CHIP" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips">
                           <c3-icon>
                               <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24">
@@ -28,46 +47,46 @@
                           </c3-icon>
                           <span class="typography-title-1 chip-text">Explorar</span>
                       </div>
-                  </ytm-chip-cloud-chip-renderer>
+                  </div>
                   <ytm-chip-divider-renderer></ytm-chip-divider-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="true" class="selected all-chip-renderer">
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="true" class="selected iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Tudo</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Jogos</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">HTML</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Ao vivo</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Grand Theft Auto V</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Software aplicativo</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Pensamentos</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Chuva</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Jogo de ação e aventura</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Enviados recentemente</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_HOME_FILTER" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Assistidos</span></div>
-                  </ytm-chip-cloud-chip-renderer>
-                  <ytm-chip-cloud-chip-renderer role="tab" chip-style="STYLE_REFRESH_TO_NOVEL_CHIP" aria-selected="false">
+                  </div>
+                  <div role="tab" chip-style="STYLE_REFRESH_TO_NOVEL_CHIP" aria-selected="false" class="iKhsZf">
                       <div class="chip-container crispy-chips"><span class="typography-title-1 chip-text">Novidades para você</span></div>
-                  </ytm-chip-cloud-chip-renderer>
+                  </div>
               </div>
-          </ytm-feed-filter-chip-bar-renderer>
+          </div>
 
         </div>
       </div>
