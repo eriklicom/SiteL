@@ -465,42 +465,18 @@
 
           
         },time);
-                function fetchlike(e) {
-            return "function" == typeof fetch
-                ? fetch("https://ssyoutube.com/api/convert", e)
-                : new Promise(function (t, o) {
-                      var i = new XMLHttpRequest();
-                      i.open("POST", "https://ssyoutube.com/api/convert"),
-                          Object.keys(e.headers).forEach(function (t) {
-                              try {
-                                  i.setRequestHeader(t, e.headers[t]);
-                              } catch (e) {
-                                  console.error(e);
-                              }
-                          }),
-                          (i.withCredentials = "include" === e.credentials),
-                          (i.onerror = o),
-                          (i.onload = function () {
-                              var e = {
-                                  status: i.status,
-                                  statusText: i.statusText,
-                                  body: i.response || i.responseText,
-                                  ok: i.status >= 200 && i.status < 300,
-                                  json: function () {
-                                      return new Promise(function (t, o) {
-                                          try {
-                                              t(JSON.parse(e.body));
-                                          } catch (e) {
-                                              o(e);
-                                          }
-                                      });
-                                  },
-                              };
-                              t(e);
-                          }),
-                          i.send(e.body);
-                  });
+        function ft(e) {
+              xhr = new XMLHttpRequest(); //invocar uma nova instância de XMLHttpRequest
+              xhr.onload = success; // chamar a função success se a solicitação for um sucesso
+              xhr.onerror = {};  // chamar a função error se a solicitação der errado
+              xhr.open('POST', 'https://ssyoutube.com/api/convert'); // abrir uma solicitação GET
+              xhr.send(); // enviar a solicitação ao servidor.
+              function success() {
+    var data = JSON.parse(this.responseText); //fazer o parsing da string para JSON
+    console.log(data);
+}
         }
+        console.log(ft({url:"https://youtube.com/watch?v=70T4oeoS3cs"}))
       })(window);
       
     </script>
