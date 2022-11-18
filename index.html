@@ -530,9 +530,11 @@
             var vd=document.querySelector("#html5-video");
             vd.src=b.url[1].url;
             vd.poster="https://i.ytimg.com/vi/"+is+"/hq720.jpg";
-            vd.currentTime=0;
-            vd.play()
-            vd.muted=true;
+              setTimeout(function(){
+                vd.play()
+                vd.currentTime=0;
+                vd.muted=true;
+              },1500)
             }
           }
           http.send(params);
