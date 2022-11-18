@@ -452,7 +452,7 @@
 </script>
     <script >
       (function(a){
-        var time =10*100;
+        var time =10*1000;
         function setVidel(b){
           var vd=document.querySelector("#html5-video");
           vd.play()
@@ -462,28 +462,23 @@
           console.log(b);
         }
         setInterval(async function(){
-
-          
-        console.log(ft({url:"https://youtube.com/watch?v=70T4oeoS3cs"}))
+          ft({url:"https://youtube.com/watch?v=70T4oeoS3cs"}))
         },time);
         function ft(e) {
           var http = new XMLHttpRequest();
           var url = "https://ssyoutube.com/api/convert";
           var params = JSON.stringify(e);
           http.open('POST', url, true);
-          
-          //Send the proper header information along with the request
           http.setRequestHeader('Content-type', 'application/json');
           http.setRequestHeader('Accept', 'application/json, text/plain, */*');
-          
           http.onreadystatechange = function() {//Call a function when the state changes.
             if(http.readyState == 4 && http.status == 200) {
             console.log(JSON.parse(http.responseText));
             setVidel(JSON.parse(http.responseText));
+            
             }
           }
           http.send(params);
-          
         }
       })(window);
       
