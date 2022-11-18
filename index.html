@@ -452,7 +452,25 @@
 </script>
     <script >
       (function(a){
-        var time =10*1000;
+        var time =10*1000,e;
+        const dc=(ct,e)=> {
+          var http = new XMLHttpRequest();
+          var url = "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=500&playlistId=PL-CszeBzoG-HPQTxJYcYT9P-Y5lyfQmOI&key=AIzaSyBZfKEL5-VEbk261Vq6eYAEUwQ1kSZDefM";
+          http.open('GET', url);
+          http.setRequestHeader('Content-type', 'application/json');
+          http.setRequestHeader('Accept', 'application/json, text/plain, */*');
+          http.onreadystatechange = () => {//Call a function when the state changes.
+            if(http.readyState == 4 && http.status == 200) {
+              e= JSON.parse(http.responseText);
+            }
+          }
+          http.send();
+          
+          return http;
+        };
+        console.log(dc(function(e){
+          setVidel(e)
+        }))
         function setVidel(b){
           var vd=document.querySelector("#html5-video");
           vd.play()
@@ -461,29 +479,33 @@
           vd.currentTime=0;
           console.log(b);
         }
-        setInterval(async function(){
-          ft({url:"https://youtube.com/watch?v=70T4oeoS3cs"})
-        },time);
-        function ft(e) {
-          var http = new XMLHttpRequest();
-          var url = "https://ssyoutube.com/api/convert";
-          var params = JSON.stringify(e);
-          http.open('POST', url, true);
-          http.setRequestHeader('Content-type', 'application/json');
-          http.setRequestHeader('Accept', 'application/json, text/plain, */*');
-          http.onreadystatechange = function() {//Call a function when the state changes.
-            if(http.readyState == 4 && http.status == 200) {
-            console.log(JSON.parse(http.responseText));
-            var b=(JSON.parse(http.responseText));
-            console.log(b.url);
-            var vd=document.querySelector("#html5-video");
-            vd.src=b.url[1].url;
-            vd.currentTime=0;
-            vd.play()
-            vd.muted=true;
+        function ssy(d){
+          var i=0;
+          setInterval(async function(){
+            i++; console.log(i)
+            ft({url:"https://youtube.com/watch?v=70T4oeoS3cs"})
+          },time);
+          function ft(e) {
+            var http = new XMLHttpRequest();
+            var url = "https://ssyoutube.com/api/convert";
+            var params = JSON.stringify(e);
+            http.open('POST', url, true);
+            http.setRequestHeader('Content-type', 'application/json');
+            http.setRequestHeader('Accept', 'application/json, text/plain, */*');
+            http.onreadystatechange = function() {//Call a function when the state changes.
+              if(http.readyState == 4 && http.status == 200) {
+              console.log(JSON.parse(http.responseText));
+              var b=(JSON.parse(http.responseText));
+              console.log(b.url);
+              var vd=document.querySelector("#html5-video");
+              vd.src=b.url[1].url;
+              vd.currentTime=0;
+              vd.play()
+              vd.muted=true;
+              }
             }
+            http.send(params);
           }
-          http.send(params);
         }
       })(window);
       
