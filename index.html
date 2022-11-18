@@ -29,9 +29,12 @@
     <style>
       html,body{
         font-family: Arial,Sans-Serif;
+        background:none;
       }
       video{
         width:100%;
+        z-index: 1;
+        height:calc((100vw / 16)*9);
       }
       .img-thumbnail img{
         width:100%;
@@ -46,7 +49,7 @@
       }
       .video-content-viwer{
         position:relative;
-        background:#000000;
+        background:;
       }
       .video-content-info{
         position:absolute;
@@ -479,7 +482,6 @@
               var i=0;
               console.log(JSON.parse(http.responseText))
             setInterval(async function(){
-              i++; 
               var yd=document.querySelector(".video-content-info");
               var dj=document.querySelector(".dv_");
               yd.innerHTML=`<div class="img-thumbnail">
@@ -503,6 +505,7 @@
              <span ${i==3?'class="action"':''}/>
              `;
               ft({url:"https://youtube.com/watch?v="+JSON.parse(http.responseText).items[i].snippet.resourceId.videoId})
+              i++; 
           },time);
             }
           }
