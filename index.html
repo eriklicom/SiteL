@@ -466,6 +466,21 @@
               console.log(JSON.parse(http.responseText))
             setInterval(async function(){
               i++; 
+              var yd=document.querySelector(".video-content-info");
+              yd.innerHTML=`<div class="img-thumbnail">
+                  <img src="https://i.ytimg.com/vvi${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}/hq720.jpg" alt="">
+                </div>
+                <div class="hero"></div>
+                <p class="vt_se">LIPÃO é o AMIGO FALSO! - Pico Park com Gelli, MarceloDRV e Luan Clash War</p>
+                <div class="format-ift">
+                  <span class="ift-3838">Curta</span>
+                  <span class="ift-3838">•</span>
+                  <span class="ift-3838">3,2 mil visualizações</span>
+                  <span class="ift-3838">•</span>
+                  <span class="ift-3838">há 1 hora</span>
+               </div>
+               <a class="video-content-btn-link" href="/">Assistir</a>
+             `
               ft({url:"https://youtube.com/watch?v="+JSON.parse(http.responseText).items[i].snippet.resourceId.videoId})
           },time);
             }
