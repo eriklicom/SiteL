@@ -61,6 +61,8 @@
         padding:  50px 20px;
         bottom: 40px;
         font-weight: 600;
+        animation: content-out 1s ease;
+        animation-delay: 0s;
       }
       .ift-3838{
         color:#888;
@@ -71,6 +73,8 @@
         bottom: 40px;
         left:0;
         font-size: 14px;
+        animation: content-out 1s ease;
+        animation-delay: 1s;
       }
       .video-content-btn-link{
         font-size: 12px;
@@ -91,14 +95,16 @@
         text-decoration:none;
       }
       .games-content-card:hover .gv6{
-        transform: translate(-50%,-59%);
+       transform: translate(-2px,5px);
+        border-bottom:  10px solid #555;
+        border-left:  10px solid #555;
       }
       .games-content-card{
         width:150px;
         position:relative;
         min-width:150px;
-        border: 1px solid #222;
-        
+      /*  border: 1px solid #222;*/
+        overflow:hidden;
       }
       .games-content-card-img img{
         width:100%;
@@ -107,6 +113,9 @@
         position:relative;
         padding: 10px;
         font-size:10px;
+        transition:  0.2s;
+        border-bottom:0px solid #8882;
+        border-left:0px solid #8882;
       }
       .tsh{
         font-size: 16px;
@@ -119,6 +128,16 @@
         flex-wrap: nowrap;
         overflow-x:  scroll;
         width:100%;
+        margin: 5px;
+      }
+      @keyframes content-out{
+        0%{
+          transform: translate(0,0);
+        }
+        100%{
+          transform: translate(0,-50%);
+          opacity: 0;
+        }
       }
     </style>
   </head>
@@ -147,6 +166,7 @@
               </div>
             </div>
           </div>
+            <div>Game</div>
           <div class="games-content">
             <div class="games-content-card">
               <a href="/">
