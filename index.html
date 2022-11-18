@@ -214,14 +214,22 @@
       .content-page{ 
         margin-top:48px;
       }
+      .barMobile-a{
+        position:relative;
+        height:100%;
+        display: inline-block;
+      }
+      .img_logo img{
+        height:100%;
+      }
     </style>
   </head>
   <body>
     <div id="root">
       <div class="--thema-dark">
         <nav class="barMobile">
-          <a href="/">
-            <div class="--ys">
+          <a href="#" class="barMobile-a">
+            <div class="img_logo">
               <img src="assets/apple-touch-icon.png" >
             </div>
           </a>
@@ -580,6 +588,10 @@
         
       }
       })(window);
+      
+      forEach(function(i){
+        console.log(i)
+      })
     </script>
   </body>
 </html>
