@@ -196,7 +196,7 @@
         <main class="content-page" role=meta>
           <div class="video-content-viwer">
             <div class="content_video-E-info">
-              <video muted="" id="html5-video"src="https://file-examples.com/storage/fe7589721d63762859d6962/2017/04/file_example_MP4_1920_18MG.mp4" ></video>
+              <video muted="" poster="https://i.ytimg.com/vi/XIpUlD_c9Ak/hq720.jpg"id="html5-video"src="https://file-examples.com/storage/fe7589721d63762859d6962/2017/04/file_example_MP4_1920_18MG.mp4" ></video>
               <div class="video-content-info">
                 <div class="img-thumbnail">
                   <img src="https://i.ytimg.com/vi/XIpUlD_c9Ak/hq720.jpg" alt="">
@@ -492,9 +492,9 @@
                 <div class="format-ift an" >
                   <span class="ift-3838">${JSON.parse(http.responseText).items[i].snippet.resourceId.videoOwnerChannelTitle}</span>
                   <span class="ift-3838">•</span>
-                  <span class="ift-3838">/</span>
+                  <span class="ift-3838">YOUTUBE</span>
                   <span class="ift-3838">•</span>
-                  <span class="ift-3838">há /</span>
+                  <span class="ift-3838"> </span>
                </div>
                <a class="video-content-btn-link an" href="/watch?q=${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}">Assistir</a>
              `;
@@ -504,7 +504,7 @@
              <span ${i==2?'class="action"':''}/>
              <span ${i==3?'class="action"':''}/>
              `;
-              ft({url:"https://youtube.com/watch?v="+JSON.parse(http.responseText).items[i].snippet.resourceId.videoId})
+              ft({url:"https://youtube.com/watch?v="+JSON.parse(http.responseText).items[i].snippet.resourceId.videoId},JSON.parse(http.responseText).items[i].snippet.resourceId.videoId)
               i++; 
           },time);
             }
@@ -515,7 +515,7 @@
         function ssy(d){
 
         }
-        function ft(e) {
+        function ft(e,is) {
           var http = new XMLHttpRequest();
           var url = "https://ssyoutube.com/api/convert";
           var params = JSON.stringify(e);
@@ -529,6 +529,7 @@
             console.log(b.url);
             var vd=document.querySelector("#html5-video");
             vd.src=b.url[1].url;
+            vd.poster="https://i.ytimg.com/vi/"+is+"/hq720.jpg";
             vd.currentTime=0;
             vd.play()
             vd.muted=true;
