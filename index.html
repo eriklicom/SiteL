@@ -516,9 +516,10 @@
              <span ${i==1?'class="action"':''}/>
              <span ${i==2?'class="action"':''}/>
              <span ${i==3?'class="action"':''}/>
+             <span ${i==4?'class="action"':''}/>
              `;
               ft({url:"https://youtube.com/watch?v="+JSON.parse(http.responseText).items[i].snippet.resourceId.videoId},JSON.parse(http.responseText).items[i].snippet.resourceId.videoId)
-              i++; 
+              i++;if(i>4){i=0;};
           },time);
             }
           }
