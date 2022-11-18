@@ -35,8 +35,10 @@
         position: fixed;
         height: 100%;
         width:50%;
+        left: -50%;
         max-width:250px;
         background: rgb(15,15,15);
+        transition: 0.2s;
       }
       .kYSkP{
         fill: #fff;
@@ -66,7 +68,7 @@
         height: 48px;
         position: absolute;
         right: -48px;
-        top: 0;
+        top: 5px;
         border-top-right-radius:4px;
         border-bottom-right-radius:4px;
         background:rgb(15,15,15);
@@ -75,17 +77,27 @@
       .dsswUS{
         fill: #fff;
       }
+      .fbCCvx{
+        padding: 0 20px;
+      }
+      .ifdSJl{
+        width:20px;
+        height: 20px;
+      }
+      .open{
+        left: 0;
+      }
     </style>
   </head>
   <body>
     <div id="root">
-      <div class="barLeft">
+      <div class="barLeft open">
         <div class="content">
           <div class="ijYss">
             <div class="content-title">
               <span ></span>
             </div>
-            <button class="ScCoreButton-sc-1qn4ixc-0 ffyxRu ScButtonIcon-sc-o7ndmn-0 nHKTN" aria-expanded="true" aria-label="Reduzir navegação da esquerda" title="Reduzir navegação da esquerda">
+            <button class="uKJyVz ffyxRu ScButtonIcon-sc-o7ndmn-0 nHKTN" aria-expanded="true" aria-label="Reduzir navegação da esquerda" title="Reduzir navegação da esquerda">
               <div class="ButtonIconFigure-sc-1ttmz5m-0 fbCCvx">
                 <div class="ScIconLayout-sc-1bgeryd-0 cXxJjc">
                   <div class="ScAspectRatio-sc-1sw3lwy-1 kPofwJ tw-aspect"/>
@@ -198,6 +210,14 @@
 
         </div>
       </div-->
+      
     </div>
+    <script >
+      var ab=document.querySelector(".barLeft");
+      var ad=document.querySelector(".uKJyVz");
+      ad.onclick=function(){
+        console.log(ab.classList.toggle("open"))
+      }
+    </script>
   </body>
 </html>
