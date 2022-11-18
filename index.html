@@ -27,6 +27,9 @@
       console.log(window.performance.now())
     </script>
     <style>
+      html,body{
+        font-family: Arial,Sans-Serif;
+      }
       video{
         width:100%;
       }
@@ -73,7 +76,7 @@
         font-weight: 600;
         animation-delay: 0s;
       }
-      .vt_se.an{animation: content-in 0.5s ease forwards;}
+      .an{animation: content-in 0.5s ease forwards;}
       .ift-3838{
         color:#888;
       }
@@ -83,12 +86,10 @@
         bottom: 40px;
         left:0;
         font-size: 14px;
-        animation: content-out 0.5s ease forwards;
         animation-delay: 0.2s;
       }
       .video-content-btn-link{
         font-size: 12px;
-        animation: content-out 0.5s ease forwards;
         color:#fff;z-index: 5;
         position:absolute;
         padding: 4px 16px;
@@ -492,7 +493,7 @@
                   <span class="ift-3838">•</span>
                   <span class="ift-3838">há /</span>
                </div>
-               <a class="video-content-btn-link an" href="/">Assistir</a>
+               <a class="video-content-btn-link an" href="/watch?q=${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}>Assistir</a>
              `;
               ft({url:"https://youtube.com/watch?v="+JSON.parse(http.responseText).items[i].snippet.resourceId.videoId})
           },time);
