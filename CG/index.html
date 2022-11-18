@@ -399,7 +399,7 @@
       text-decoration:none;
       display: block;
       overflow: hidden;
-      width:100%;
+      width:90%;
     }
     .content-auto-complete-text{
       display:flex;
@@ -420,9 +420,13 @@
       background:none;
       display:inline-block;
       border:none;
-      height: 30;
+      height: 30px;
+      z-index: 20;
+      width: 30px;
     }
-    
+    .button-remove-items:hover{
+      background: #333;
+    }
     .content-auto-complete:hover{
       background: #2223;
       border-radius: 1px;
@@ -449,6 +453,7 @@
             </div>
             <span>ARIA SECRET</span>
           </div>
+        </a>
         <div class="....">
           <button class="button-remove-items" aria-label="Remover histórico de busca">
             <div class="gdKhd">
@@ -459,18 +464,18 @@
               </svg>    
             </div>
           </button>
-        </a>
         </div>
       </div>
     </li>
   </ul>
   <script >
+  localStorage.setItem("search-history","[7,5,4,7,6,5,5,8]");
   searchListAu();
-    var EM={}
-    EM.tpl=function(e){
+    var EM={};searchRemove(3)
+    function tpl(e,i){
       return`<li class="Ugsj">
       <div class="content-auto-complete">
-        <a href="/" class="a-df5">
+        <a href="" class="a-df5">
           <div class="content-auto-complete-text">
             <div class="YyXbJ">
               <figure class="TBafs">
@@ -482,10 +487,10 @@
                 </svg>
               </figure>
             </div>
-            <span>ARIA SECRET</span>
+            <span>${e}</span>
           </div>
         <div class="....">
-          <button class="button-remove-items" aria-label="Remover histórico de busca">
+          <button data-id=${i} class="button-remove-items" aria-label="Remover histórico de busca">
             <div class="gdKhd">
               <svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScIconSVG-sc-1bgeryd-1 jgyXQm">
                 <g>
@@ -499,13 +504,35 @@
       </div>
     </li>`
     }
+    function searchSet(e){
+      var s=localStorage.getItem("search-history")
+      localStorage.setItem("search-history","['"+e+ "',"+s.substr(1));
+
+    }
+    function searchRemove(i){
+      var s=localStorage.getItem("search-history"),r=JSON.parse(s).splice(i)
+      localStorage.setItem("search-history",JSON.stringify(r));
+      var ui=document.querySelectorAll("ul")[0]
+      ui.innerHTML=null;
+      searchListAu()
+    }
     function searchListAu(){
-      var g=document.querySelector("ui"),
+      var ui=document.querySelectorAll("ul")
       sh=localStorage.getItem("search-history");
       if(sh){
-      JSON.parse(sh).forEach(function(e){
-        ui.innerHTML+=EM.tpl(e)
+       
+      JSON.parse(sh).forEach(function(e,i){
+        ui[0].innerHTML+=tpl(e,i);
       }) }
+      var btsX=document.querySelectorAll("ul")
+      function removeItemOnce(arr, value) {
+  var index = arr.indexOf(value);
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+  return arr;
+}
+      
     }
   </script>
 </div>
