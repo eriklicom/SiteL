@@ -494,6 +494,10 @@
               
               var i=0;
               console.log(JSON.parse(http.responseText))
+             var ud=JSON.parse(http.responseText).items[0].snippet.publishedAt.split("-");
+             
+             var sdn={ y: new Date().getFullYear() - ud[0] }
+             console.log(sdn)
             setInterval(async function(){
               var yd=document.querySelector(".video-content-info");
               var dj=document.querySelector(".dv_");
@@ -503,11 +507,11 @@
                 <div class="hero"></div>
                 <p class="vt_se an">${JSON.parse(http.responseText).items[i].snippet.title}</p>
                 <div class="format-ift an" >
-                  <span class="ift-3838">${JSON.parse(http.responseText).items[i].snippet.resourceId.videoOwnerChannelTitle}</span>
+                  <span class="ift-3838">${JSON.parse(http.responseText).items[i].snippet.videoOwnerChannelTitle}</span>
                   <span class="ift-3838">•</span>
                   <span class="ift-3838">YOUTUBE</span>
                   <span class="ift-3838">•</span>
-                  <span class="ift-3838"> </span>
+                  <span class="ift-3838"></span>
                </div>
                <a class="video-content-btn-link an" href="/watch?q=${JSON.parse(http.responseText).items[i].snippet.resourceId.videoId}">Assistir</a>
              `;
