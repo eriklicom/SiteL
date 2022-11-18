@@ -474,7 +474,7 @@
   <script >
   localStorage.setItem("search-history","[7,5,4,7,6,5,5,8]");
   searchListAu();
-    var EM={};searchRemove(3)
+    var EM={};
     function tpl(e,i){
       return`<li class="Ugsj">
       <div class="content-auto-complete">
@@ -516,7 +516,7 @@
       var s=localStorage.getItem("search-history"),r=JSON.parse(s).splice(i)
       localStorage.setItem("search-history",JSON.stringify(r));
       var ui=document.querySelectorAll("ul")[0]
-      ui.innerHTML=null;
+      ui.innerHTML="<div >yy<div>";
       searchListAu()
     }
     function searchListAu(){
@@ -537,7 +537,9 @@
 }
       
       btsX.forEach(function(e){
-        searchRemove(e.getAttribute("data-id"))
+        e.onclick=function(){
+         searchRemove(e.getAttribute("data-id"))
+        }
       })
       
     }
