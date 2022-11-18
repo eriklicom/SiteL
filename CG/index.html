@@ -277,8 +277,14 @@
       ad.onclick=function(){ab.classList.toggle("open");}
       
       var az=document.querySelectorAll("a");
-      az.forEach(function(e){e.onclick=function(){window.history.pushState(null,document.title, e.href);return false};});
+      az.forEach(function(e){e.onclick=function(){window.history.pushState(null,document.title, e.href);apt();return false};});
       
+      function apt(){
+        var path=window.location.pathname;
+        console.log(path)
+        window.history.url = window.history.url ? window.history.url : [];
+        window.history.url.push({location:path,date: new Date.now()})
+      }
     </script>
   </body>
 </html>
