@@ -513,7 +513,7 @@
 
     }
     function searchRemove(i){
-      var s=localStorage.getItem("search-history"),r=JSON.parse(s).splice(i)
+      var s=localStorage.getItem("search-history"),r=JSON.parse(s).splice(i,i)
       localStorage.setItem("search-history",JSON.stringify(r));
       var ui=document.querySelectorAll("ul")[0]
       ui.innerHTML="<div >yy<div>";
@@ -538,7 +538,7 @@
       
       btsX.forEach(function(e){
         e.onclick=function(){
-         searchRemove(e.getAttribute("data-id"))
+         searchRemove(+e.getAttribute("data-id"))
         }
       })
       
