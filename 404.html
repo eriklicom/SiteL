@@ -14,7 +14,7 @@
     
   </script>
   <meta name="preconect" href="https://youtube.com">
-  <link rel="stylesheet" href="assets/core-7a26f86447572.css"/>
+  <link rel="stylesheet" href="asse ts/core-7a26f86447572.css"/>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
   <style >
@@ -60,6 +60,9 @@
         transform: rotate(360deg);
       }
     }
+    .uKKv[disabled]{
+      opacity: 0.5;
+    }
     .uKKv{
       background: #187;
       width:100%;
@@ -74,7 +77,7 @@
   </style>
  </head>
  <body size="smooth" class="--dark">
-   <app modal="login/regiter">
+   <app modal="login/regiter" style="display:none">
      <div class="ba-te">
        <video muted="" class="media"autoplay=""preload="none" style="position: fixed" data-testid="hero:video" playsinline="" loop="" muted="" class="style__Video-fydk49-2 gCXmmQ">
          <source src="https://www.leagueoflegends.com/static/hero-0632cbf2872c5cc0dffa93d2ae8a29e8.webm" type="video/webm"/>
@@ -84,7 +87,7 @@
         <div class="login">
           <h1 >///</h1>
           <div class="uJdAs">
-            <form  novalidate="">
+            <form novalidate="">
               <div class="yTxNN">
                 <input maxlength="100" autocomplete="off" >
               </div>
@@ -111,22 +114,90 @@
       var TC=btoa({name:FM[0].value,key:FM[1].value})
       console.log({
         name:FM[0].value,
-        key:FM[1].value
+        key:FM[1].value,
+        time: Date.now()
       },TC,FM.classList.toggle("on"))
       LG(TC,function(es){
         if(es===200){
           FM.classList.toggle("on");
           console.log("abrindo o jogo ")
-        }else{
-          FM[3].setAttribute("disabled")
+        };if(es!==200){
+          FM[2].disabled=true;
+          FM.classList.toggle("on");
         }
       });
       
       return!true;
     }
+    FM[0].onkeydown=function(){
+      if(FM[0].value.length>2&&FM[1].value.length>8){
+        FM[2].disabled=false;
+      }else{
+        FM[2].disabled=true;
+      }
+    }
+    FM[1].onkeydown=function(){
+      if(FM[0].value.length>2&&FM[1].value.length>8){
+        FM[2].disabled=false;
+      }else{
+        FM[2].disabled=true;
+      }
+    }
     function LG(req,res){
-     res(300)
+     res(20)
     }
    </script>
+   <style >
+     .prosess{
+       height: 6px;
+       width:40px;
+       background:#65bad499 ;
+     }
+     .prosess span{
+       height: 6px;
+       background:#65bad4 ;
+       display: block;
+       margin:0 2px;
+     }
+     body{
+       background: #000;
+       color: #fff;
+     }
+     .st{
+       display: flex;
+     }
+   </style>
+   <ul >
+     <li >
+       <p >dd</p>
+       <div class="st">
+         <div class="prosess">
+           <span style="width:10px;">
+             0%
+           </span>
+         </div>
+         <div class="prosess">
+           <span style="width:2px;">
+             0%
+           </span>
+         </div>
+         <div class="prosess">
+           <span style="width:0px;">
+             0%
+           </span>
+         </div>
+         <div class="prosess">
+           <span style="width:0px;">
+             0%
+           </span>
+         </div>
+         <div class="prosess">
+           <span style="width:0px;">
+             0%
+           </span>
+         </div>
+       </div>
+     </li>
+   </ul>
  </body>
 </html>
