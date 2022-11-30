@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "index.js"
+    "start": "index.js",
+    "dev": "next index.js"
   },
   "author": "FAN02DLET - ERIK",
   "license": "ISC"
