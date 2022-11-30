@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "Index.js"
+    "start": "index.js"
   },
   "author": "FAN02DLET - ERIK",
   "license": "ISC"
