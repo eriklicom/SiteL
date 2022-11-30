@@ -1,6 +1,0 @@
-# ASSETS.
-- IMGS!
-- JS!
-- CSS!
-- /$/
-
